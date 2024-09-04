@@ -261,6 +261,37 @@ This approach optimizes the database design by reducing redundancy, ensuring dat
 
 > explain briefly your solution for this problem here
 
+#### Homes for User Page
+
+- **User Selection Dropdown:** Implement a single-select dropdown at the top of the page, allowing users to select a specific user.
+- **Home Cards Display:** Once a user is selected, display a list of homes associated with that user in card format below the dropdown.
+
+#### Edit User Functionality
+
+- **Edit Modal:** Each home card should have an "Edit User" button. When clicked, it will open a modal.
+- **User Checkboxes:** The modal will display all available users with checkboxes. The checkboxes will be pre-selected based on the current user associations with the selected home.
+- **Updating User Associations:** Users can toggle the checkboxes to update the user associations for that home. Clicking "Save" will update the database with the new associations and refresh the Homes for User page. Clicking "Cancel" will close the modal without making any changes.
+- **Validation:** Ensure that at least one user is selected before enabling the "Save" button.
+
+#### Data Fetching
+
+- **RTK Query Integration:** Use RTK Query to fetch data for users and homes efficiently.
+- **Loading and Error Handling:** Display a loading spinner or skeleton while data is being fetched. Handle errors gracefully to ensure a smooth user experience.
+
+#### State Management
+
+- **Redux Toolkit:** Use Redux Toolkit to manage the application's state, including the data for users and homes.
+
+#### Styling
+
+- **Tailwind CSS:** Use Tailwind CSS for styling to ensure the interface is both responsive and simple.
+
+#### Setup Instructions
+
+1. Navigate to the frontend directory by running `cd frontend`.
+2. Install all necessary dependencies by running `npm install`.
+3. Start the development server with `npm run dev`.
+
 ## 3. Backend API development on Node
 
 ### problem
@@ -326,6 +357,40 @@ This approach optimizes the database design by reducing redundancy, ensuring dat
 ### solution
 
 > explain briefly your solution for this problem here
+
+#### APIs Implementation
+
+- **/user/find-all:** Retrieves and returns a list of all users from the database.
+- **/home/find-by-user:** Fetches and returns all homes associated with a specific user.
+- **/user/find-by-home:** Retrieves and returns all users linked to a specific home.
+- **/home/update-users:** Updates the list of users associated with a particular home based on the provided input.
+
+#### Technology Stack
+
+- **Framework:** Express.js
+- **ORM:** Sequelize
+- **CORS:** Enabled to support cross-origin resource sharing
+
+#### Setup Instructions
+
+1. Navigate to the backend directory by running `cd backend`.
+2. Install all necessary dependencies by running `npm install`.
+3. Start the server by running `node app.js`.
+
+#### Controllers
+
+- **Purpose:** Manage the business logic and data processing for API requests.
+- **Function:** Handle incoming requests, interact with models to perform the necessary operations, and return appropriate responses.
+
+#### Models
+
+- **Purpose:** Define the data structures and interact with the database.
+- **Function:** Map JSON queries to database entities and perform CRUD (Create, Read, Update, Delete) operations.
+
+#### Routes
+
+- **Purpose:** Define the URL endpoints and map them to corresponding controller functions.
+- **Function:** Handle incoming HTTP requests and route them to the appropriate controllers for processing.
 
 ## Submission Guidelines
 
